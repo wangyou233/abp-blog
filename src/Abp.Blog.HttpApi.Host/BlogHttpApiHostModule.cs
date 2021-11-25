@@ -49,9 +49,6 @@ namespace Abp.Blog
         {
             var configuration = context.Services.GetConfiguration();
             var hostingEnvironment = context.Services.GetHostingEnvironment();
-
-            ConfigureBundles();
-            ConfigureUrls(configuration);
             ConfigureConventionalControllers();
             ConfigureAuthentication(context, configuration);
             ConfigureLocalization();
@@ -60,29 +57,7 @@ namespace Abp.Blog
             ConfigureSwaggerServices(context, configuration);
         }
 
-        private void ConfigureBundles()
-        {
-            Configure<AbpBundlingOptions>(options =>
-            {
-                options.StyleBundles.Configure(
-                    BasicThemeBundles.Styles.Global,
-                    bundle => { bundle.AddFiles("/global-styles.css"); }
-                );
-            });
-        }
-
-        private void ConfigureUrls(IConfiguration configuration)
-        {
-            Configure<AppUrlOptions>(options =>
-            {
-                options.Applications["MVC"].RootUrl = configuration["App:SelfUrl"];
-                options.RedirectAllowedUrls.AddRange(configuration["App:RedirectAllowedUrls"].Split(','));
-
-                options.Applications["Angular"].RootUrl = configuration["App:ClientUrl"];
-                options.Applications["Angular"].Urls[AccountUrlNames.PasswordReset] = "account/reset-password";
-            });
-        }
-
+      
         private void ConfigureVirtualFileSystem(ServiceConfigurationContext context)
         {
             var hostingEnvironment = context.Services.GetHostingEnvironment();
