@@ -5,7 +5,7 @@ using System.Text;
 namespace Abp.Blog.Posts
 {
 
-    public enum Status
+    public enum PostStatus
     {
         Enable,
         Draft,

@@ -15,13 +15,12 @@ namespace Abp.Blog.Entities
     /// <summary>
     /// 文章
     /// </summary>
-    public class Post : Entity<int>
+    public class Post : AuditedAggregateRoot<int>
     {
         /// <summary>
         /// 标题
         /// </summary>
         [Column("varchar(100)")]
-        [Required]
         public string Title { get; set; }
 
         /// <summary>
@@ -89,12 +88,7 @@ namespace Abp.Blog.Entities
         /// <summary>
         /// 状态
         /// </summary>
-        public Status Status { get; set; }
-
-        /// <summary>
-        /// 创建时间
-        /// </summary>
-        public DateTime CreationTime { get; set; }
+        public PostStatus Status { get; set; }
 
 
         public int ReadCount { get; set; }

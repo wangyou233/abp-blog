@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Abp.Blog.Entities;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -19,9 +20,7 @@ namespace Abp.Blog.EntityFrameworkCore
     [ReplaceDbContext(typeof(ITenantManagementDbContext))]
     [ConnectionStringName("Default")]
     public class BlogDbContext : 
-        AbpDbContext<BlogDbContext>,
-        IIdentityDbContext,
-        ITenantManagementDbContext
+        AbpDbContext<BlogDbContext>
     {
         /* Add DbSet properties for your Aggregate Roots / Entities here. */
         
@@ -39,19 +38,49 @@ namespace Abp.Blog.EntityFrameworkCore
          */
         
         //Identity
-        public DbSet<IdentityUser> Users { get; set; }
-        public DbSet<IdentityRole> Roles { get; set; }
-        public DbSet<IdentityClaimType> ClaimTypes { get; set; }
-        public DbSet<OrganizationUnit> OrganizationUnits { get; set; }
-        public DbSet<IdentitySecurityLog> SecurityLogs { get; set; }
-        public DbSet<IdentityLinkUser> LinkUsers { get; set; }
+        //public DbSet<IdentityUser> Users { get; set; }
+        //public DbSet<IdentityRole> Roles { get; set; }
+        //public DbSet<IdentityClaimType> ClaimTypes { get; set; }
+        //public DbSet<OrganizationUnit> OrganizationUnits { get; set; }
+        //public DbSet<IdentitySecurityLog> SecurityLogs { get; set; }
+        //public DbSet<IdentityLinkUser> LinkUsers { get; set; }
         
-        // Tenant Management
-        public DbSet<Tenant> Tenants { get; set; }
-        public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
+        //// Tenant Management
+        //public DbSet<Tenant> Tenants { get; set; }
+        //public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
+
+
+
 
         #endregion
+
+        #region blog Entities from the modules
+
+        public DbSet<Post> Posts { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<PostComment> PostComments { get; set; }
+
+        public DbSet<File> Files { get; set; }
         
+        public DbSet<Setting> Settings { get; set; }
+
+        public DbSet<Tag> Tags { get; set; }
+
+        public DbSet<PostTag> PostTags { get; set; }
+
+        public DbSet<SystemLog> SystemLogs { get; set; }
+
+        public DbSet<Link> Links { get; set; }
+
+        public DbSet<ChatHistory> ChatHistories { get; set; }
+
+        public DbSet<Admin> Admins { get; set; }
+
+        
+
+        #endregion
         public BlogDbContext(DbContextOptions<BlogDbContext> options)
             : base(options)
         {
@@ -64,14 +93,14 @@ namespace Abp.Blog.EntityFrameworkCore
 
             /* Include modules to your migration db context */
 
-            builder.ConfigurePermissionManagement();
-            builder.ConfigureSettingManagement();
-            builder.ConfigureBackgroundJobs();
-            builder.ConfigureAuditLogging();
-            builder.ConfigureIdentity();
-            builder.ConfigureIdentityServer();
-            builder.ConfigureFeatureManagement();
-            builder.ConfigureTenantManagement();
+            //builder.ConfigurePermissionManagement();
+            //builder.ConfigureSettingManagement();
+            //builder.ConfigureBackgroundJobs();
+            //builder.ConfigureAuditLogging();
+            //builder.ConfigureIdentity();
+            //builder.ConfigureIdentityServer();
+            //builder.ConfigureFeatureManagement();
+            //builder.ConfigureTenantManagement();
 
             /* Configure your own tables/entities inside here */
 

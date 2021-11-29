@@ -5,16 +5,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Abp.Blog.Entities
 {
-    public class Category
+    public class Category : AuditedAggregateRoot<int>
     {
         /// <summary>
         /// 标题
         /// </summary>
         [Column("varchar(100)")]
-        [Required]
         public string Title { get; set; }
 
         /// <summary>
