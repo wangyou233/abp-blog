@@ -7,6 +7,10 @@
     <RootNamespace>Abp.Blog</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Abp.Blog.Domain\Abp.Blog.Domain.csproj" />
     <ProjectReference Include="..\Abp.Blog.Application.Contracts\Abp.Blog.Application.Contracts.csproj" />
