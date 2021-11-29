@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Abp.Blog.DbMigrator\Abp.Blog.DbMigrator.csproj" />
     <ProjectReference Include="..\Abp.Blog.EntityFrameworkCore\Abp.Blog.EntityFrameworkCore.csproj" />
   </ItemGroup>
 

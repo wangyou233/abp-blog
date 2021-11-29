@@ -12,22 +12,7 @@ namespace Abp.Blog.Samples
      */
     public class SampleAppServiceTests : BlogApplicationTestBase
     {
-        private readonly IIdentityUserAppService _userAppService;
 
-        public SampleAppServiceTests()
-        {
-            _userAppService = GetRequiredService<IIdentityUserAppService>();
-        }
-
-        [Fact]
-        public async Task Initial_Data_Should_Contain_Admin_User()
-        {
-            //Act
-            var result = await _userAppService.GetListAsync(new GetIdentityUsersInput());
-
-            //Assert
-            result.TotalCount.ShouldBeGreaterThan(0);
-            result.Items.ShouldContain(u => u.UserName == "admin");
-        }
+       
     }
 }

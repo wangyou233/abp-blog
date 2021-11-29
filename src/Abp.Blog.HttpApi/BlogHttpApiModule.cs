@@ -1,23 +1,14 @@
-﻿using Localization.Resources.AbpUi;
-using Abp.Blog.Localization;
-using Volo.Abp.Account;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity;
+﻿using Abp.Blog.Localization;
+using Localization.Resources.AbpUi;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
-using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.SettingManagement;
-using Volo.Abp.TenantManagement;
+
 
 namespace Abp.Blog
 {
     [DependsOn(
         typeof(BlogApplicationContractsModule),
-        typeof(AbpAccountHttpApiModule),
-        typeof(AbpIdentityHttpApiModule),
-        typeof(AbpPermissionManagementHttpApiModule),
-        typeof(AbpTenantManagementHttpApiModule),
-        typeof(AbpFeatureManagementHttpApiModule),
         typeof(AbpSettingManagementHttpApiModule)
         )]
     public class BlogHttpApiModule : AbpModule
