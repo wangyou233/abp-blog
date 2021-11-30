@@ -12,26 +12,26 @@ namespace Abp.Blog.Entities
 {
     public class User : AuditedAggregateRoot<int>
     {
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string UserName { get; set; }
 
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string NiceName { get; set; }
 
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string Password { get; set; }
 
         public int Phone { get; set; }
 
         public UserStatus UserStatus { get; set; }
 
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string Email { get; set; }
 
         /// <summary>
         /// 头像
         /// </summary>
-        [Column("varchar(255)")]
+        [Column(TypeName = "varchar(255)")]
         public string AvatarUrl { get; set; }
 
     }

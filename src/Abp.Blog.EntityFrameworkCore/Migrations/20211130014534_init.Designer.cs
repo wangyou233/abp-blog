@@ -10,8 +10,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Abp.Blog.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    [Migration("20211129095321_UpdateBlog")]
-    partial class UpdateBlog
+    [Migration("20211130014534_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,8 +28,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("AvatarUrl")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -46,8 +45,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("CreatorId");
 
                     b.Property<string>("CustomDescription")
-                        .HasColumnType("longtext")
-                        .HasColumnName("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("longtext")
@@ -62,18 +60,13 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("LastModifierId");
 
                     b.Property<string>("NiceName")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Password")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
@@ -87,9 +80,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Alias")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -106,8 +97,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("CreatorId");
 
                     b.Property<string>("CustomDescription")
-                        .HasColumnType("longtext")
-                        .HasColumnName("text");
+                        .HasColumnType("text");
 
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("longtext")
@@ -125,16 +115,13 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PassWord")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("PostCount")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
@@ -150,8 +137,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("AvatarUrl")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Comment")
                         .HasColumnType("longtext");
@@ -175,8 +161,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("ExtraProperties");
 
                     b.Property<string>("IpAddress")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime(6)")
@@ -221,9 +206,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("ExtraProperties");
 
                     b.Property<string>("FileName")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime(6)")
@@ -234,22 +217,16 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("LastModifierId");
 
                     b.Property<string>("Path")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("RootPath")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("Size")
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
@@ -263,25 +240,19 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext")
-                        .HasColumnName("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Logo")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Name")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("Sort")
                         .HasColumnType("int");
 
                     b.Property<string>("Team")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
@@ -295,14 +266,10 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Alias")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Author")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -322,21 +289,17 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("CreatorId");
 
                     b.Property<string>("CustomDescription")
-                        .HasColumnType("longtext")
-                        .HasColumnName("text");
+                        .HasColumnType("text");
 
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("longtext")
                         .HasColumnName("ExtraProperties");
 
                     b.Property<string>("ImageUrl")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<bool>("IsTop")
-                        .HasColumnType("tinyint(1)")
-                        .HasColumnName("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime(6)")
@@ -347,31 +310,25 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("LastModifierId");
 
                     b.Property<string>("Markdown")
-                        .HasColumnType("longtext")
-                        .HasColumnName("longtext");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("PassWord")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("ReadCount")
                         .HasColumnType("int");
 
                     b.Property<string>("SeoSetting")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Url")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
@@ -387,33 +344,24 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("AllowNotification")
-                        .HasColumnType("tinyint(1)")
-                        .HasColumnName("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Author")
                         .IsRequired()
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("AuthorUrl")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Content")
-                        .HasColumnType("longtext")
-                        .HasColumnName("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("IpAddress")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("tinyint(1)");
@@ -428,9 +376,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserAgent")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
@@ -485,13 +431,11 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("EventId")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("EventTitle")
                         .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
@@ -505,14 +449,10 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("DisplayName")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("TagName")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
@@ -526,8 +466,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("AvatarUrl")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(255)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -544,9 +483,7 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("CreatorId");
 
                     b.Property<string>("Email")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("longtext")
@@ -561,20 +498,16 @@ namespace Abp.Blog.Migrations
                         .HasColumnName("LastModifierId");
 
                     b.Property<string>("NiceName")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Password")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("longtext")
-                        .HasColumnName("varchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("UserStatus")
                         .HasColumnType("int");
@@ -890,6 +823,37 @@ namespace Abp.Blog.Migrations
                     b.HasIndex("IsAbandoned", "NextTryTime");
 
                     b.ToTable("AbpBackgroundJobs");
+                });
+
+            modelBuilder.Entity("Volo.Abp.SettingManagement.Setting", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(64)
+                        .HasColumnType("varchar(64)");
+
+                    b.Property<string>("ProviderName")
+                        .HasMaxLength(64)
+                        .HasColumnType("varchar(64)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(2048)
+                        .HasColumnType("varchar(2048)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name", "ProviderName", "ProviderKey");
+
+                    b.ToTable("AbpSettings");
                 });
 
             modelBuilder.Entity("Abp.Blog.Entities.Category", b =>

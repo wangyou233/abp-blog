@@ -7,12 +7,19 @@
     <RootNamespace>Abp.Blog</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Code\C#\Abp.Blog\aspnet-core\src\Abp.Blog.Application.Contracts\Abp.Blog.Application.Contracts.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\Abp.Blog.Domain.Shared\Abp.Blog.Domain.Shared.csproj" />
+    <PackageReference Include="Abp" Version="6.6.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="4.4.4" />
+    <PackageReference Include="Volo.Abp.ObjectExtending" Version="4.4.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.ObjectExtending" Version="4.4.4" />
+    <ProjectReference Include="..\Abp.Blog.Domain.Shared\Abp.Blog.Domain.Shared.csproj" />
   </ItemGroup>
 
 </Project>

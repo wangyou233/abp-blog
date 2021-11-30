@@ -11,17 +11,17 @@ namespace Abp.Blog.Entities
     public class File : AuditedAggregateRoot<int>
     {
 
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string Path { get; set; }
 
-        [Column("varchar(255)")]
+        [Column(TypeName = "varchar(255)")]
         public string RootPath { get; set; }
 
         public int Size { get; set; }
-        [Column("varchar(255)")]
+        [Column(TypeName = "varchar(255)")]
         public string FileName { get; set; }
 
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string Type { get; set; }
     }
 }

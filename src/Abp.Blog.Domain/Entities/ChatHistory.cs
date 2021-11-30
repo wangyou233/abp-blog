@@ -24,7 +24,7 @@ namespace Abp.Blog.Entities
         /// <summary>
         /// 头像
         /// </summary>
-        [Column("varchar(255)")]
+        [Column(TypeName = "varchar(255)")]
         public string AvatarUrl { get; set; }
 
 
@@ -36,7 +36,7 @@ namespace Abp.Blog.Entities
         /// <summary>
         /// Ip
         /// </summary>
-        [Column("varchar(50)")]
+        [Column(TypeName = "varchar(50)")]
         public string IpAddress { get; set; }
 
     }

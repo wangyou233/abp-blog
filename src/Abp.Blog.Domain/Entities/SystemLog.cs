@@ -14,13 +14,13 @@ namespace Abp.Blog.Entities
         /// <summary>
         /// 关联Id
         /// </summary>
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string EventId { get; set; }
 
         /// <summary>
         /// 事件
         /// </summary>
-        [Column("varchar(255)")]
+        [Column(TypeName = "varchar(255)")]
         [Required]
         public string EventTitle { get; set; }
 

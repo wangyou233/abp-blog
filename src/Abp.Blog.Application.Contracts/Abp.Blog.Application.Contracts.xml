@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Abp.Blog.Application.Contracts</name>
+    </assembly>
+    <members>
+        <member name="P:Abp.Blog.Blog.CategoryDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Blog.CategoryDto.Alias">
+            <summary>
+            别名
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Blog.CategoryDto.ParentId">
+            <summary>
+            上级目录
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Blog.CategoryDto.PassWord">
+            <summary>
+            加密密码
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Blog.CategoryDto.CustomDescription">
+            <summary>
+            自定义描述
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Dto.Category.CreateUpdateCategoryDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Dto.Category.CreateUpdateCategoryDto.Alias">
+            <summary>
+            别名
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Dto.Category.CreateUpdateCategoryDto.ParentId">
+            <summary>
+            上级目录
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Dto.Category.CreateUpdateCategoryDto.PassWord">
+            <summary>
+            加密密码
+            </summary>
+        </member>
+        <member name="P:Abp.Blog.Dto.Category.CreateUpdateCategoryDto.CustomDescription">
+            <summary>
+            自定义描述
+            </summary>
+        </member>
+    </members>
+</doc>

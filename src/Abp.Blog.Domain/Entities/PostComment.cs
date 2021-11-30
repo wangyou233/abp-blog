@@ -13,17 +13,17 @@ namespace Abp.Blog.Entities
     public class PostComment : Entity<int>
     {
 
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         [Required]
         public string Author { get; set; }
 
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         [Required]
         public string Email { get; set; }
-        [Column("varchar(50)")]
+        [Column(TypeName = "varchar(50)")]
         public string IpAddress { get; set; }
 
-        [Column("varchar(255)")]
+        [Column(TypeName = "varchar(255)")]
         public string AuthorUrl { get; set; }
 
         
@@ -33,14 +33,12 @@ namespace Abp.Blog.Entities
         public Post Post { get; set; }
         public int PostId { get; set; }
 
-        [Column("bit")]
         public bool AllowNotification { get; set; }
-        
-        [Column("varchar(255)")]
+
+        [Column(TypeName = "varchar(255)")]
         public string UserAgent { get; set; }
         public PostCommentStatus PostCommentStatus { get; set; }
 
-        [Column("text")]
         public string Content { get; set; }
 
         [ForeignKey("ParentId")]

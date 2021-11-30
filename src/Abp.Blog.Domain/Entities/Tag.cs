@@ -13,12 +13,12 @@ namespace Abp.Blog.Entities
         /// <summary>
         /// 标签名称
         /// </summary>
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string TagName { get; set; }
         /// <summary>
         /// 展示名称
         /// </summary>
-        [Column("varchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string DisplayName { get; set; }
 
     }

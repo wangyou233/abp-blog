@@ -173,10 +173,10 @@ namespace Abp.Blog
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Blog API");
 
-                var configuration = context.ServiceProvider.GetRequiredService<IConfiguration>();
-                c.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
-                c.OAuthClientSecret(configuration["AuthServer:SwaggerClientSecret"]);
-                c.OAuthScopes("Blog");
+                //var configuration = context.ServiceProvider.GetRequiredService<IConfiguration>();
+                //c.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
+                //c.OAuthClientSecret(configuration["AuthServer:SwaggerClientSecret"]);
+                //c.OAuthScopes("Blog");
             });
 
             app.UseAuditing();
