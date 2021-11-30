@@ -118,20 +118,12 @@ namespace Abp.Blog
         {
             context.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy( builder =>
+                options.AddDefaultPolicy(builder =>
                 {
                     builder
-                        .WithOrigins(
-                            configuration["App:CorsOrigins"]
-                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                                .Select(o => o.RemovePostFix("/"))
-                                .ToArray()
-                        )
-                        .WithAbpExposedHeaders()
-                        .SetIsOriginAllowedToAllowWildcardSubdomains()
                         .AllowAnyHeader()
                         .AllowAnyMethod()
-                        .AllowCredentials();
+                        .AllowAnyOrigin();
                 });
             });
         }
@@ -157,6 +149,10 @@ namespace Abp.Blog
             app.UseStaticFiles();
             app.UseRouting();
             app.UseCors();
+            //app.UseCors(option =>
+            //{
+            //    option.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials();
+            //});
             app.UseAuthentication();
             app.UseJwtTokenMiddleware();
 
